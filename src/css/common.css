@@ -17,16 +17,15 @@ img {
   max-width: 100%;
 }
 
-[data-start],
-[data-stop] {
+.btn {
   position: absolute;
   padding: 10px;
 }
-[data-start] {
+.btn-left {
   top: 50%;
   left: 45%;
 }
-[data-stop] {
+.btn-right {
   top: 50%;
   left: 50%;
 }

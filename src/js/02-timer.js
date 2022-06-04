@@ -37,14 +37,13 @@ start.addEventListener("click", countdownTimer);
 
 function countdownTimer() {
   const timeInMs = Number(inputPicker.dataset.time);
-  let currentTime = currentDate.getTime();
-  let timeLeft = timeInMs - currentTime;
+
   setInterval(() => {
+    let currentTime = new Date().getTime();
+    let timeLeft = timeInMs - currentTime;
     const convertedTime = convertMs(timeLeft);
     const { days, hours, minutes, seconds } = convertedTime;
     setTime(days, hours, minutes, seconds);
-    currentTime = new Date().getTime();
-    timeLeft = timeInMs - currentTime
   }, 1000);
 }
 

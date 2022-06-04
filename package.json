@@ -1,8 +1,7 @@
 {
   "name": "goit-js-hw-09",
   "version": "2.0.0",
-  "description": "",
-  "homepage": "https://annaojdana.github.io/goit-js-hw-09",
+  "homepage": "https://annaojdana.github.io/goit-js-hw-09/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /parcel-project-template/"
@@ -14,9 +13,7 @@
   "keywords": [],
   "author": "Anna Ojdana <anna.ojdana@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/annaojdana/goit-js-hw-09.git/issues"
-  },
+  "description": "",
   "dependencies": {
     "flatpickr": "^4.6.13",
     "modern-normalize": "^1.1.0",

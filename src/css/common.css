@@ -29,8 +29,9 @@ img {
   top: 50%;
   left: 50%;
 }
-input {
+.datetime-picker {
   margin-left: 30px;
+  padding: 10px;
 }
 .timer{
   display: flex;

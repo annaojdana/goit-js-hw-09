@@ -46,6 +46,7 @@ function countdownTimer() {
     currentTime = new Date().getTime();
     timeLeft = timeInMs - currentTime
   }, 1000);
+}
 
 function setTime(days, hours, minutes, seconds) {
 
@@ -76,4 +77,4 @@ function convertMs(ms) {
 
 function addLeadingZero(value) {
   return (value < 10) ?  value = "0" + value  :  value;
-}
+  };

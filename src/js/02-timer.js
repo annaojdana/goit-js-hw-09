@@ -21,7 +21,7 @@ const options = {
     const selectedDate = selectedDates[0];
     if (selectedDate > currentDate) {
       start.disabled = false;
-      console.log(selectedDate.getTime());
+      Notiflix.Notify.success('The selected date is correct. Press the "start" to countdown.');
       inputPicker.dataset.time = selectedDate.getTime();
     } else {
       Notiflix.Notify.failure("Please choose a date in the future", {
@@ -32,21 +32,27 @@ const options = {
   },
 };
 
-const datePiker = flatpickr(inputPicker, options);
+flatpickr(inputPicker, options);
 start.addEventListener("click", countdownTimer);
 
 function countdownTimer() {
+  start.disabled = true;
   const timeInMs = Number(inputPicker.dataset.time);
 
-  setInterval(() => {
+  timer = setInterval(() => {
     let currentTime = new Date().getTime();
     let timeLeft = timeInMs - currentTime;
     const convertedTime = convertMs(timeLeft);
     const { days, hours, minutes, seconds } = convertedTime;
     setTime(days, hours, minutes, seconds);
-  }, 1000);
-}
 
+    if (timeLeft < 1000) {
+      clearInterval(timer);
+      Notiflix.Notify.success("READY");
+    };
+  }, 1000);
+
+}
 function setTime(days, hours, minutes, seconds) {
 
   daysField.innerHTML = addLeadingZero(days);

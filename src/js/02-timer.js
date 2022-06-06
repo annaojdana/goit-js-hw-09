@@ -1,21 +1,24 @@
+// Flatpickr library
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+
+// Notiflix library
 import Notiflix from 'notiflix';
 
+// QuerySelectors
 const start = document.querySelector("[data-start]");
-start.disabled = true;
-
 const daysField = document.querySelector("[data-days]");
 const hoursField = document.querySelector("[data-hours]");
 const minutesField = document.querySelector("[data-minutes]");
 const secondsField = document.querySelector("[data-seconds]");
 const inputPicker = document.querySelector("#datetime-picker");
-const currentDate = new Date();
+
+// Options for flatpickr
 const options = {
   altInput: true,
   enableTime: true,
   time_24hr: true,
-  defaultDate: currentDate,
+  defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
@@ -24,17 +27,20 @@ const options = {
       Notiflix.Notify.success('The selected date is correct. Press the "start" to countdown.');
       inputPicker.dataset.time = selectedDate.getTime();
     } else {
-      Notiflix.Notify.failure("Please choose a date in the future", {
-    timeout: 1500,
-  },);
+      Notiflix.Notify.failure("Please choose a date in the future");
     };
-
   },
 };
 
+// Flatpickr initialization
+start.disabled = true;
 flatpickr(inputPicker, options);
+
+//Listening for the button 'start'
 start.addEventListener("click", countdownTimer);
 
+
+// Function
 function countdownTimer() {
   start.disabled = true;
   const timeInMs = Number(inputPicker.dataset.time);

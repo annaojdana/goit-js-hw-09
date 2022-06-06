@@ -45,7 +45,7 @@ function countdownTimer() {
   start.disabled = true;
   const timeInMs = Number(inputPicker.dataset.time);
 
-  timer = setInterval(() => {
+  const timer = setInterval(() => {
     let currentTime = new Date().getTime();
     let timeLeft = timeInMs - currentTime;
     const convertedTime = convertMs(timeLeft);

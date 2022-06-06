@@ -22,7 +22,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
-    if (selectedDate > currentDate) {
+    if (selectedDate > new Date()) {
       start.disabled = false;
       Notiflix.Notify.success('The selected date is correct. Press the "start" to countdown.');
       inputPicker.dataset.time = selectedDate.getTime();

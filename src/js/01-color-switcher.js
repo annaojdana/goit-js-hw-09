@@ -16,6 +16,7 @@ function getRandomHexColor() {
 function handleStart() {
   start.disabled = true;
   stop.disabled = false;
+  body.style.backgroundColor = getRandomHexColor();
     changeColor = setInterval(() => {
       const bodyColor = getRandomHexColor();
       body.style.backgroundColor = bodyColor;

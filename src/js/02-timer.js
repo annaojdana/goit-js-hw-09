@@ -24,7 +24,7 @@ const options = {
     const selectedDate = selectedDates[0];
     if (selectedDate > new Date()) {
       start.disabled = false;
-      Notiflix.Notify.success('The selected date is correct. Press the "start" to countdown.');
+      Notiflix.Notify.success('Press the "start" to countdown.');
       inputPicker.dataset.time = selectedDate.getTime();
     } else {
       Notiflix.Notify.failure("Please choose a date in the future");

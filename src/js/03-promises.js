@@ -22,7 +22,7 @@ function handleSubmit(event) {
   if (delayMs >= 0 && stepMs >= 0 && amountNr > 0) {
 
     for (let i = 1; i <= amountNr; i++) {
-      delayMs += Number(step.value);
+
       createPromise(i, delayMs)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -30,6 +30,7 @@ function handleSubmit(event) {
       .catch(({ position, delay }) => {
         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
+      delayMs += Number(step.value);
     }
   } else {
     Notiflix.Notify.failure(`❌ select values ​​above 0 `);

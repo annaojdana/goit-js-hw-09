@@ -18,16 +18,9 @@ img {
 }
 
 .btn {
-  position: absolute;
+  background-color: #fff;
   padding: 10px;
-}
-.btn-left {
-  top: 50%;
-  left: 45%;
-}
-.btn-right {
-  top: 50%;
-  left: 50%;
+  border-radius: 8px;
 }
 .datetime-picker {
   margin-left: 30px;
